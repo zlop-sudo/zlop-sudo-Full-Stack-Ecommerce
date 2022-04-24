@@ -35,7 +35,7 @@ export class CartDetailsComponent implements OnInit {
       data => this.shipping = data
     );
 
-    // publish again
+    // publish again (init) or increment / decrement
     this.cartService.computeCartTotals();
   }
 

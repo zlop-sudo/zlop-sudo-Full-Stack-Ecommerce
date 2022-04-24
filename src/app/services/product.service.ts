@@ -82,7 +82,7 @@ export class ProductService {
   }
 }
 
-export interface GetResponseProducts {
+interface GetResponseProducts {
   _embedded: {
     products: Product[]; 
   },

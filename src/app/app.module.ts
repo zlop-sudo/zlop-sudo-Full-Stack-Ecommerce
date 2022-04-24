@@ -15,6 +15,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   // search
@@ -30,6 +32,9 @@ const routes: Routes = [
   // cart items
   {path: 'cart-details', component: CartDetailsComponent}, // cart items
 
+  // check out form
+  {path: 'checkout', component: CheckoutComponent}, // check out form
+
   // default
   {path: 'products', component: ProductListComponent}, // defualt 
   {path: '', redirectTo: '/products', pathMatch: 'full'}, // default
@@ -44,13 +49,15 @@ const routes: Routes = [
     SearchComponent,
     ProductDetailsComponent,
     CartStatusComponent,
-    CartDetailsComponent
+    CartDetailsComponent,
+    CheckoutComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

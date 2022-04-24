@@ -4,7 +4,6 @@ import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
-import { GetResponseProducts } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -90,7 +89,7 @@ export class ProductListComponent implements OnInit {
   }
 
   processResult() {
-    return (data: GetResponseProducts) => { 
+    return (data) => { 
       this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
       this.thePageSize = data.page.size;
