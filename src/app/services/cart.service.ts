@@ -9,12 +9,27 @@ export class CartService {
 
   cartItems: CartItem[] = [];
 
+  // save data in session storage
+  storage: Storage = sessionStorage;
+  // another option: local storage (save according to url&port)
+  // storage: Storage = localStorage;
+
   // ReplaySubject(All previous messages) -- BehaviorSubject(latest message)
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
   shipping: Subject<number> = new BehaviorSubject<number>(0);
 
-  constructor() { }
+  constructor() {
+    // read data from storage
+    let data = JSON.parse(this.storage.getItem('cartItems'));
+
+    if (data != null) {
+      this.cartItems = data;
+
+      // compute and public date
+      this.computeCartTotals();
+    }
+  }
 
   addToCart(theCartItem: CartItem) {
     
@@ -60,6 +75,8 @@ export class CartService {
     this.totalPrice.next(totalPriceValue);
     this.totalQuantity.next(totalQuantityValue);
     this.shipping.next(shippingValue);
+
+    this.persistCartItems();
   }
 
   decrementQuantity(theCartItem: CartItem) {
@@ -81,5 +98,10 @@ export class CartService {
 
       this.computeCartTotals();
     }
+  }
+
+  // save cart data to session storage
+  persistCartItems() {
+    this.storage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
 }
