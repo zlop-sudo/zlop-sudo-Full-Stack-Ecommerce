@@ -1,4 +1,6 @@
-# E-Commerce Website A Full Stack E-Commerce website with Angular and Java Spring Boot for users to shopping and check out. 
+# E-Commerce Website 
+
+A Full Stack E-Commerce website with Angular and Java Spring Boot for users to shopping and check out. 
 
 
 • Built a rich and user friendly shopping browser and shopping cart using Angular. 
@@ -10,7 +12,7 @@
 • Developed a Spring Boot backend using RESTful APIs and MySQL database.
 
 
-
+##
 
 # AngularEcommerce
 
