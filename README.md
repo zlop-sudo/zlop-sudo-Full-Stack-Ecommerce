@@ -1,3 +1,17 @@
+# E-Commerce Website A Full Stack E-Commerce website with Angular and Java Spring Boot for users to shopping and check out. 
+
+
+• Built a rich and user friendly shopping browser and shopping cart using Angular. 
+
+• Implemented credit card payments using Stripe API. 
+
+• Used OAuth2 to implement user management and authentication. 
+
+• Developed a Spring Boot backend using RESTful APIs and MySQL database.
+
+
+
+
 # AngularEcommerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
